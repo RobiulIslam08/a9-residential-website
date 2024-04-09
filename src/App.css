@@ -1,0 +1,14 @@
+.slide{
+  color: brown;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.slide1 {
+  background-image: url("./assets/apartments.jpg");
+}

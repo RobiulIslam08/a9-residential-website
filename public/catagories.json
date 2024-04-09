@@ -1,0 +1,75 @@
+[
+    {
+      "image": "image_url1.jpg",
+      "estate_title": "Modern Single-Family Home",
+      "id": 1,
+      "segment_name": "Residential",
+      "description": "A stunning modern single-family home with sleek design and spacious rooms.",
+      "price": "$500,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "City Center",
+      "facilities": ["living room", "kitchen", "backyard"]
+    },
+    {
+      "image": "image_url2.jpg",
+      "estate_title": "Luxury Apartment with Panoramic Views",
+      "id": 2,
+      "segment_name": "Residential",
+      "description": "Luxurious apartment offering breathtaking views of the city skyline.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "1500 sq ft",
+      "location": "Waterfront District",
+      "facilities": ["swimming pool", "gym", "balcony"]
+    },
+    {
+      "image": "image_url3.jpg",
+      "estate_title": "Charming Townhouse in Historic Neighborhood",
+      "id": 3,
+      "segment_name": "Residential",
+      "description": "Beautiful townhouse nestled in a historic neighborhood, featuring classic architecture.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Old Town",
+      "facilities": ["living room", "patio", "garage"]
+    },
+    {
+      "image": "image_url4.jpg",
+      "estate_title": "Senior Living Community - Tranquil Retreat",
+      "id": 4,
+      "segment_name": "Residential",
+      "description": "A serene senior living community offering comfort and companionship.",
+      "price": "$3,500/month",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "Suburban Oasis",
+      "facilities": ["community center", "garden", "library"]
+    },
+    {
+      "image": "image_url5.jpg",
+      "estate_title": "Spacious Vacation Rental Near the Beach",
+      "id": 5,
+      "segment_name": "Residential",
+      "description": "A spacious vacation rental just steps away from the sandy shores, perfect for a beach getaway.",
+      "price": "$200/night",
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "Coastal Paradise",
+      "facilities": ["ocean view", "private deck", "BBQ area"]
+    },
+    {
+      "image": "image_url6.jpg",
+      "estate_title": "Student Housing - Modern Dormitory",
+      "id": 6,
+      "segment_name": "Residential",
+      "description": "Modern dormitory facilities ideal for students, offering convenience and community.",
+      "price": "$800/month",
+      "status": "rent",
+      "area": "500 sq ft (per room)",
+      "location": "University Campus",
+      "facilities": ["study area", "laundry room", "recreation lounge"]
+    }
+  ]
+  

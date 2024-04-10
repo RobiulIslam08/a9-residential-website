@@ -4,9 +4,11 @@ import {Outlet} from "react-router-dom"
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="font-poppins w-full">
+            <div className="w-[90%] mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

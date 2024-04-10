@@ -18,11 +18,18 @@ const Navbar = () => {
 
   const links = <>
     <div className="space-x-9">
-      <NavLink>Home</NavLink>
+      <NavLink  className={({ isActive }) =>
+              isActive ? "font-bold text-primary" : "font-semibold"
+            } to="/">Home</NavLink>
       <NavLink>Update Profile</NavLink>
       <NavLink>Contact</NavLink>
-      <NavLink to="login">Login</NavLink>
-      <NavLink to="register">Register</NavLink>
+      <NavLink  className={({ isActive }) =>
+              isActive ? "font-bold text-primary" : "font-semibold"
+            } to="/login">Login</NavLink>
+      <NavLink  className={({ isActive }) =>
+              isActive ? "font-bold text-primary" : "font-semibold"
+            } to="/register">Register</NavLink>
+      
     </div>
   </>
   return (

@@ -24,7 +24,6 @@ const Login = () => {
       console.log(result.user);
     } catch (error) {
       // Handle login error
-      console.log("error khaiso ", error);
       setLoginError("Invalid email or password."); // Set login error message
     }
   };

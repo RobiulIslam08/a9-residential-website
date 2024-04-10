@@ -21,8 +21,12 @@ const Navbar = () => {
       <NavLink  className={({ isActive }) =>
               isActive ? "font-bold text-primary" : "font-semibold"
             } to="/">Home</NavLink>
-      <NavLink>Update Profile</NavLink>
-      <NavLink>Contact</NavLink>
+      <NavLink className={({ isActive }) =>
+              isActive ? "font-bold text-primary" : "font-semibold"
+            } to="/update">Update Profile</NavLink>
+      <NavLink className={({ isActive }) =>
+              isActive ? "font-bold text-primary" : "font-semibold"
+            } to="/contact">Contact</NavLink>
       <NavLink  className={({ isActive }) =>
               isActive ? "font-bold text-primary" : "font-semibold"
             } to="/login">Login</NavLink>

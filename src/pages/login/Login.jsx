@@ -2,9 +2,15 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 const Login = () => {
+
   const { loginUser } = useContext(AuthContext)
   const {
     register,
@@ -21,10 +27,13 @@ const Login = () => {
     try {
       // Perform login operation
       const result = await loginUser(email, password);
+      
+      toast("Successful Login");
       console.log(result.user);
     } catch (error) {
       // Handle login error
       setLoginError("Invalid email or password."); // Set login error message
+      toast.error("please valid information")
     }
   };
 
@@ -63,9 +72,9 @@ const Login = () => {
          
         </div>
       </div>
+      <ToastContainer position="top-center"></ToastContainer>
     </div>
   );
 };
 
 export default Login;
-

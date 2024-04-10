@@ -1,7 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Navbar = () => {
+  const {user, logout}  = useContext(AuthContext)
+  const handleLogout = ()=>{
+    logout()
+    .then( ()=>{
+      console.log('log out')
+    })
+    .catch(error =>{
+      console.log('error khaiso logout ' ,error)
+    })
+  }
+
+
   const links = <>
     <div className="space-x-9">
       <NavLink>Home</NavLink>
@@ -32,16 +46,19 @@ const Navbar = () => {
       <div className="navbar-end">
 
           {/* longin and register */}
-          <div>
-          <button className="btn">login</button>
-          <button className="btn">register</button>
-        </div>
+         
+          
+          {
+            user? <> <button onClick={handleLogout} className="btn">log out</button>
+     
         
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </div>
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </div></>
+            : <button  className="btn"><Link to="/login">login</Link></button>
+          }
       
       </div>
     </div>

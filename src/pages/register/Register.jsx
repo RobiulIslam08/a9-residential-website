@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -16,10 +17,10 @@ const Register = () => {
     const passwordUppercasePattern = /[A-Z]/;
 
     const onSubmit = (data) => {
-        const { email, password } = data
+        const { email, password} = data
         createUser(email, password)
         .then(result =>{
-            console.log(result)
+            console.log(result.user)
         })
         .catch(error =>{
             console.log("eror khaiso ", error)
@@ -81,6 +82,10 @@ const Register = () => {
 
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
+                        </div>
+                        <div className="flex">
+                            <p>Have an account?</p>
+                            <p className="text-blue-500"><Link to="/login">please login</Link></p>
                         </div>
 
                     </form>

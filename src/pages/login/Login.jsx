@@ -3,18 +3,22 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {FaGithub, FaGoogle  } from "react-icons/fa";
+
 
 
 
 
 const Login = () => {
+ 
 
-  const { loginUser } = useContext(AuthContext)
+  const { loginUser, signWithGoogle, signWithGithub } = useContext(AuthContext)
   const {
     register,
     handleSubmit,
+
 
     // formState: { errors },
   } = useForm()
@@ -27,7 +31,7 @@ const Login = () => {
     try {
       // Perform login operation
       const result = await loginUser(email, password);
-      
+
       toast("Successful Login");
       console.log(result.user);
     } catch (error) {
@@ -37,6 +41,26 @@ const Login = () => {
     }
   };
 
+  const handleGoogleSignin = () =>{
+   
+    signWithGoogle()
+    .then(()=>{
+      console.log('successful')
+    })
+    .catch(error =>{
+      console.log("error khaiso vai", error)
+    })
+    
+  }
+  const handleGithubLogin = () =>{
+    signWithGithub()
+    .then(()=>{
+      console.log('successful')
+    })
+    .catch(error =>{
+      console.log("error khaiso vai", error)
+    })
+  }
   return (
     <div className="hero my-16 ">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -65,11 +89,17 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
             <div className="text-sm flex items-center justify-center ">
-            <p>New here?</p>
-            <p className="text-blue-500"><Link to="/register">Create an account</Link></p>
-          </div>
+              <p>New here?</p>
+              <p className="text-blue-500"><Link to="/register">Create an account</Link></p>
+            </div>
+            <p className="text-center text-sm mt-6">or sign up using</p>
+            <div className="flex justify-center items-center gap-4 ">
+            <FaGoogle onClick={handleGoogleSignin}  className="text-2xl"/>
+            <FaGithub onClick={handleGithubLogin}  className="text-2xl"></FaGithub>
+            </div>
+
           </form>
-         
+
         </div>
       </div>
       <ToastContainer position="top-center"></ToastContainer>

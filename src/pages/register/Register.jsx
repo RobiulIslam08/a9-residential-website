@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
+    const [showPass, setShowPass] = useState(false)
     const {
         register,
         handleSubmit,
@@ -64,14 +66,23 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input {...register("password", {
+                            
+                            <input  {...register("password", {
                                 validate: {
                                     length: value => passwordLengthPattern.test(value) || "Password must be at least 6 characters",
                                     lowercase: value => passwordLowercasePattern.test(value) || "Password must contain at least one lowercase letter",
                                     uppercase: value => passwordUppercasePattern.test(value) || "Password must contain at least one uppercase letter"
                                 }
-                            })} type="password" placeholder="password" className="input input-bordered" required />
-
+                            })} type={showPass?"text":"password"} placeholder="password" className=" input input-bordered" required />
+                           
+                            <span className="relative -top-8 left-[290px]" onClick={()=>setShowPass(!showPass)}>
+                                
+                                
+                            {
+                                showPass?<FaEye></FaEye>
+                                :<FaEyeSlash></FaEyeSlash>
+                            }
+                            </span>
 
                             {/* Indicate the error messages for password validation */}
                             {errors.password && (

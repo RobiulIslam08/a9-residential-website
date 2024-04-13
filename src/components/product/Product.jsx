@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 // eslint-disable-next-line react/prop-types
 const Product = ({product}) => {
-    const {image,estate_title,description,status,area,price} = product
+    const {image,estate_title,description,status,area,price,id} = product
     return (
        
             <div className="card h-[450px] card-compact w-96 bg-base-100 shadow-xl">
@@ -20,7 +22,7 @@ const Product = ({product}) => {
                         <span>{price}</span>
                     </div>
                    </div>
-                  <button className="btn btn-accent">view details</button>
+                  <Link to={`/details/${id}`} className="btn btn-accent">view details</Link>
                 </div>
             </div>
         

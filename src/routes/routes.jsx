@@ -6,6 +6,7 @@ import Register from "../pages/register/Register";
 import UpdateProfile from "../pages/updateProfile/UpdateProfile";
 import Contact from "../pages/contact/Contact";
 import ErrorPage from "../pages/errroPage/ErrorPage";
+import Details from "../pages/details/Details";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         {
           path: "contact",
           element: <Contact></Contact>
+        },
+        {
+          path: "/details/:id",
+          element: <Details></Details>
         }
 
       ]

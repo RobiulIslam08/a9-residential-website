@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const {user, logout}  = useContext(AuthContext)
-  
+
   const handleLogout = ()=>{
     logout()
     .then( ()=>{
@@ -28,17 +28,12 @@ const Navbar = () => {
       <NavLink className={({ isActive }) =>
               isActive ? "font-bold text-primary" : "font-semibold"
             } to="/contact">Contact</NavLink>
-      <NavLink  className={({ isActive }) =>
-              isActive ? "font-bold text-primary" : "font-semibold"
-            } to="/login">Login</NavLink>
-      <NavLink  className={({ isActive }) =>
-              isActive ? "font-bold text-primary" : "font-semibold"
-            } to="/register">Register</NavLink>
+   
       
     </div>
   </>
   return (
-    <div className="mb-8 navbar bg-base-200 shadow-md my-2">
+    <div className="mb-8 navbar bg-base-200 shadow-md px-12 my-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" btn btn-ghost lg:hidden">
@@ -55,13 +50,13 @@ const Navbar = () => {
           {links}
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end space-x-5">
 
           {/* longin and register */}
          
           
           {
-            user? <> <button onClick={handleLogout} className="btn">log out</button>
+            user? <> 
      
 {/*         
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -74,14 +69,15 @@ const Navbar = () => {
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar"> <div className="w-10 rounded-full">
                 <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
               </div></div>
-              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2  bg-base-100 rounded-box w-36">
+              <ul tabIndex={0} className="dropdown-content z-[1] menu bg-base-100 rounded-box w-36">
                 {/* <li><a></a></li> */}
                 {user.displayName}
                 
               </ul>
             </div>
+            <button onClick={handleLogout} className="btn btn-accent">log out</button>
             </>
-            : <button  className="btn"><Link to="/login">login</Link></button>
+            : <button  className="btn btn-accent"><Link to="/login">login</Link></button>
           }
       
       </div>

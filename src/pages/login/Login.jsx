@@ -26,7 +26,7 @@ const Login = () => {
   const [loginError, setLoginError] = useState("")
 
   const onSubmit = async (data) => {
-    const { email, password } = data;
+    const { email, password} = data;
     setLoginError("")
     try {
       // Perform login operation

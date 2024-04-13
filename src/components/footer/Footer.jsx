@@ -5,18 +5,20 @@ const Footer = () => {
       <div className="w-full bg-base-300">
           <footer className="w-[90%] mx-auto footer p-10  text-base-content">
         <nav>
-          <h6 className="footer-title">Services</h6> 
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <h6 className="footer-title">Property Types</h6> 
+          <a className="link link-hover">Single-family homes</a>
+          <a className="link link-hover">Apartments</a>
+          <a className="link link-hover">Senior Living Community</a>
+          <a className="link link-hover">Townhouses</a>
+          <a className="link link-hover">Vacation Rental</a>
+          <a className="link link-hover">Student Housing</a>
         </nav> 
         <nav>
           <h6 className="footer-title">Company</h6> 
           <a className="link link-hover">About us</a>
+          <a className="link link-hover">Our Product</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a className="link link-hover">Our Team</a>
         </nav> 
         <nav>
           <h6 className="footer-title">Social</h6> 
@@ -33,5 +35,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-

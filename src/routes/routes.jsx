@@ -7,6 +7,7 @@ import UpdateProfile from "../pages/updateProfile/UpdateProfile";
 import Contact from "../pages/contact/Contact";
 import ErrorPage from "../pages/errroPage/ErrorPage";
 import Details from "../pages/details/Details";
+import PrivetRoute from "../components/privetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/details/:id",
-          element: <Details></Details>
+          element: <PrivetRoute><Details></Details></PrivetRoute>
         }
 
       ]

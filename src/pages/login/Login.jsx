@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,9 +12,10 @@ import {FaGithub, FaGoogle  } from "react-icons/fa";
 
 
 const Login = () => {
- 
-
   const { loginUser, signWithGoogle, signWithGithub } = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
+  console.log(location)
   const {
     register,
     handleSubmit,
@@ -31,6 +32,7 @@ const Login = () => {
     try {
       // Perform login operation
       const result = await loginUser(email, password);
+      navigate(location?.state? location.state: "/")
 
       toast("Successful Login");
       console.log(result.user);

@@ -1,8 +1,16 @@
-# React + Vite
+# My website name  "Home Vibe"
+### live link  
+`https://weary-morning.surge.sh/`
+---
+### featured
+- navbar: The navbar will be present on all pages.  
+- home page: All product will be displayed on this home page.  
+- detail page: When the user clicks the View Property button it takes
+the user to the Estate Details page. This page will be a protected route
+and  the private route moves to the login page if the user is
+not logged in.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- contact page: This page has been created for contacting us  
+- register page: This page to create a new account.
+## Characteristics of my website  
+The website is a comprehensive real estate listing platform featuring a diverse range of properties including single-family homes, luxury apartments, townhouses, senior living communities, vacation rentals, and student housing. Each listing is detailed, providing high-quality images, thorough descriptions, specific location details, and pricing information. Properties are organized into segments for easy navigation, catering to various user needs and preferences. 

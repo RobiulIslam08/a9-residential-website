@@ -12,7 +12,7 @@ const Product = ({product}) => {
                 <div className="card-body">
                     <h2 className="card-title">{estate_title}</h2>
                    <div className="space-y-2 text-gray-500 font-light">
-                   <p>{description}</p>
+                   <p>{description.slice(0,70)}</p>
                     <div className="flex w-[100%] justify-between items-center ">
                      <p >{area}</p>
                      <span className=" border border-green-400 p-2 rounded-lg">for {status}</span>

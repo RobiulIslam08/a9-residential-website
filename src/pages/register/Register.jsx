@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const { createUser ,updateUserProfile} = useContext(AuthContext)
     const [showPass, setShowPass] = useState(false)
     const {
         register,
@@ -22,11 +23,14 @@ const Register = () => {
     const passwordUppercasePattern = /[A-Z]/;
 
     const onSubmit = (data) => {
-        const { email, password} = data
+        const { email, password,name,photo} = data
+        console.log(name)
         createUser(email, password)
-        .then(result =>{
-            console.log(result.user)
-            toast("Successful Register");
+        .then(() =>{
+            updateUserProfile(name,photo)
+            .then(()=>{
+                navigate("/")
+            })
         })
         .catch(error =>{
             console.log("eror khaiso ", error)

@@ -8,6 +8,7 @@ import Contact from "../pages/contact/Contact";
 import ErrorPage from "../pages/errroPage/ErrorPage";
 import Details from "../pages/details/Details";
 import PrivetRoute from "../components/privetRoute/PrivetRoute";
+import UpdateProfileProtected from "../components/privetRoute/updateProfle/UpdateProfileProtected";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         },
         {
           path: "update",
-          element: <UpdateProfile></UpdateProfile>
+          element: <UpdateProfileProtected><UpdateProfile></UpdateProfile></UpdateProfileProtected>
         },
         {
           path: "contact",

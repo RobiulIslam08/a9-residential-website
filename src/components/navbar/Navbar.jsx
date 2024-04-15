@@ -71,7 +71,7 @@ const Navbar = () => {
               </div></div>
               <ul tabIndex={0} className="dropdown-content z-[1] menu bg-base-100 rounded-box w-36">
                 {/* <li><a></a></li> */}
-                {user.displayName}
+                {user?.displayName? user.displayName : 'no name '}
                 
               </ul>
             </div>

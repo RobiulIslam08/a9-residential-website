@@ -1,6 +1,6 @@
 # My website name  "Home Vibe"
 ### live link  
-`https://weary-morning.surge.sh/`
+`https://residential-website-b2561.web.app`
 ---
 ### featured
 - navbar: The navbar will be present on all pages.  

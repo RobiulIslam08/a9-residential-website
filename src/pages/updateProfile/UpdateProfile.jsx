@@ -1,13 +1,13 @@
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { register } from "swiper/element";
+
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 
 const UpdateProfile = () => {
-    const { updateUserProfile } = useContext(AuthContext)
+    const { updateUserProfile ,setReload} = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -21,6 +21,7 @@ const UpdateProfile = () => {
         console.log(name)
         updateUserProfile(name,photo)
         .then(() =>{
+            setReload(true)
             console.log("update name",name)
             navigate("/")
             console.log()

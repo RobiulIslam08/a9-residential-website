@@ -9,7 +9,7 @@ import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const navigate = useNavigate()
-    const { createUser ,updateUserProfile} = useContext(AuthContext)
+    const { createUser ,updateUserProfile,setReload} = useContext(AuthContext)
     const [showPass, setShowPass] = useState(false)
     const {
         register,
@@ -29,6 +29,7 @@ const Register = () => {
         .then(() =>{
             updateUserProfile(name,photo)
             .then(()=>{
+                setReload(true)
                 navigate("/")
             })
         })

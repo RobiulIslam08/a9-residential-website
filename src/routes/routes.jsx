@@ -9,6 +9,8 @@ import ErrorPage from "../pages/errroPage/ErrorPage";
 import Details from "../pages/details/Details";
 import PrivetRoute from "../components/privetRoute/PrivetRoute";
 import UpdateProfileProtected from "../components/privetRoute/updateProfle/UpdateProfileProtected";
+import Blogs from "../pages/blogs/Blogs";
+import BlogsProtect from "../components/privetRoute/blogProtect/BlogsProtect";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
         {
           path: "/details/:id",
           element: <PrivetRoute><Details></Details></PrivetRoute>
+        },
+        {
+          path: "blogs",
+          element: <BlogsProtect><Blogs></Blogs></BlogsProtect>
         }
 
       ]

@@ -28,12 +28,15 @@ const Navbar = () => {
       <NavLink className={({ isActive }) =>
               isActive ? "font-bold text-primary" : "font-semibold"
             } to="/contact">Contact</NavLink>
+             <NavLink className={({ isActive }) =>
+              isActive ? "font-bold text-primary" : "font-semibold"
+            } to="/blogs">Blogs</NavLink>
    
       
     </div>
   </>
   return (
-    <div className="mb-8 navbar bg-base-200 shadow-md px-12 my-2">
+    <div className="mb-8 navbar bg-base-200 shadow-md px-4 lg:px-12 my-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" btn btn-ghost lg:hidden">
@@ -43,7 +46,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <h1 className="text-3xl font-bold">Home Vibes</h1>
+        <h1 className="lg:text-3xl text-xl font-bold">Home Vibes</h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -75,9 +78,9 @@ const Navbar = () => {
                 
               </ul>
             </div>
-            <button onClick={handleLogout} className="btn btn-accent">log out</button>
+            <button onClick={handleLogout} className="btn btn-sm btn-accent">log out</button>
             </>
-            : <button  className="btn btn-accent"><Link to="/login">login</Link></button>
+            : <button  className="btn btn-sm px-5 btn-accent"><Link to="/login">login</Link></button>
           }
       
       </div>

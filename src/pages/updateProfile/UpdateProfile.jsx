@@ -42,7 +42,7 @@ const UpdateProfile = () => {
 
 
     <div className="card shrink-0 w-[400px] max-w-sm shadow-2xl bg-base-100">
-        <h1 className="text-center text-2xl font-semibold mt-3">Want to update your profile?</h1>
+        <h1 className="text-center text-xl font-semibold mt-3">Want to update your profile?</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">

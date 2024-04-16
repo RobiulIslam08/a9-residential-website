@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Categories from "../../components/categories/Categories";
 import Slider from "../../components/slider/Slider";
+import Team from "../../components/team/Team";
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             </Helmet>
             <Slider></Slider>
             <Categories></Categories>
+            <Team></Team>
         </div>
     );
 };

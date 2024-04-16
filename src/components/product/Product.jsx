@@ -7,7 +7,7 @@ const Product = ({product}) => {
     const {image,estate_title,description,status,area,price,id} = product
     return (
        
-            <div  data-aos-delay="50" data-aos-duration="1000" data-aos="fade-down-right" className=" card h-[450px] card-compact w-96 bg-base-100 shadow-xl">
+            <div   data-aos-duration="1000" data-aos="zoom-out-up" className="hover:shadow-2xl card h-[450px] card-compact lg:w-[320] xl:w-96 md:w-[300px] w-[250px] mx-auto bg-base-100 shadow-xl">
                 <figure><img className="w-full h-96" src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{estate_title}</h2>

@@ -3,9 +3,9 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {FaGithub, FaGoogle  } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -27,14 +27,14 @@ const Login = () => {
   const [loginError, setLoginError] = useState("")
 
   const onSubmit = async (data) => {
-    const { email, password} = data;
+    const { email, password } = data;
     setLoginError("")
     try {
       // Perform login operation
       const result = await loginUser(email, password);
-      navigate(location?.state? location.state: "/")
+      navigate(location?.state ? location.state : "/")
+      toast("Successful Login"); 
 
-      toast("Successful Login");
       console.log(result.user);
     } catch (error) {
       // Handle login error
@@ -43,28 +43,32 @@ const Login = () => {
     }
   };
 
-  const handleGoogleSignin = () =>{
-   
+  const handleGoogleSignin = () => {
+
     signWithGoogle()
-    .then(()=>{
-      console.log('successful')
-    })
-    .catch(error =>{
-      console.log("error khaiso vai", error)
-    })
-    
+      .then(() => {
+        console.log('successful')
+      })
+      .catch(error => {
+        console.log("error khaiso vai", error)
+      })
+
   }
-  const handleGithubLogin = () =>{
+  const handleGithubLogin = () => {
     signWithGithub()
-    .then(()=>{
-      console.log('successful')
-    })
-    .catch(error =>{
-      console.log("error khaiso vai", error)
-    })
+      .then(() => {
+        console.log('successful')
+      })
+      .catch(error => {
+        console.log("error khaiso vai", error)
+      })
   }
   return (
-    <div className="hero my-16 ">
+   <div>
+    <Helmet>
+                <title>Login page</title>
+            </Helmet>
+     <div className="hero my-16 ">
       <div className="hero-content flex-col lg:flex-row-reverse">
 
         <div className="card shrink-0 w-[400px] max-w-sm shadow-2xl bg-base-100">
@@ -96,16 +100,16 @@ const Login = () => {
             </div>
             <p className="text-center text-sm mt-6">or sign up using</p>
             <div className="flex justify-center items-center gap-4 ">
-            <FaGoogle onClick={handleGoogleSignin}  className="text-2xl"/>
-            <FaGithub onClick={handleGithubLogin}  className="text-2xl"></FaGithub>
+              <FaGoogle  onClick={handleGoogleSignin} className="text-2xl hover:text-green-700" />
+              <FaGithub onClick={handleGithubLogin} className="text-2xl"></FaGithub>
             </div>
 
           </form>
 
         </div>
       </div>
-      <ToastContainer position="top-center"></ToastContainer>
     </div>
+   </div>
   );
 };
 

@@ -3,6 +3,7 @@ import Navbar from "../components/navbar/Navbar";
 import {Outlet} from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { ToastContainer } from "react-toastify";
 // ..
 AOS.init();
 
@@ -14,11 +15,13 @@ const MainLayout = () => {
     // }
     return (
         <div className="font-poppins w-full">
-            <div className="w-[95%] mx-auto">
+            <div className="w-[90%] mx-auto">
+            <ToastContainer position="top-center"></ToastContainer>
             <Navbar></Navbar>
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
+
         </div>
     );
 };

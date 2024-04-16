@@ -47,7 +47,9 @@ const Login = () => {
 
     signWithGoogle()
       .then(() => {
-        console.log('successful')
+        navigate(location?.state ? location.state : "/")
+        toast("Successful Login"); 
+       
       })
       .catch(error => {
         console.log("error khaiso vai", error)
@@ -57,7 +59,9 @@ const Login = () => {
   const handleGithubLogin = () => {
     signWithGithub()
       .then(() => {
-        console.log('successful')
+        navigate(location?.state ? location.state : "/")
+        toast("Successful Login"); 
+       
       })
       .catch(error => {
         console.log("error khaiso vai", error)
@@ -71,7 +75,7 @@ const Login = () => {
      <div className="hero my-16 ">
       <div className="hero-content flex-col lg:flex-row-reverse">
 
-        <div className="card shrink-0 w-[400px] max-w-sm shadow-2xl bg-base-100">
+        <div className="card shrink-0 lg:w-[400px] md:w-[350px] w-[250px] max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <h1 className="text-2xl font-semibold text-center">Please Login</h1>
             <div className="form-control">
@@ -96,12 +100,12 @@ const Login = () => {
             </div>
             <div className="text-sm flex items-center justify-center ">
               <p>New here?</p>
-              <p className="text-blue-500"><Link to="/register">Create an account</Link></p>
+              <p className="text-violet-600"><Link to="/register">Create an account</Link></p>
             </div>
             <p className="text-center text-sm mt-6">or sign up using</p>
             <div className="flex justify-center items-center gap-4 ">
-              <FaGoogle  onClick={handleGoogleSignin} className="text-2xl hover:text-green-700" />
-              <FaGithub onClick={handleGithubLogin} className="text-2xl"></FaGithub>
+              <FaGoogle  onClick={handleGoogleSignin} className="text-2xl hover:text-violet-700" />
+              <FaGithub onClick={handleGithubLogin} className="text-2xl hover:text-violet-700"></FaGithub>
             </div>
 
           </form>

@@ -104,8 +104,8 @@ const Login = () => {
             </div>
             <p className="text-center text-sm mt-6">or sign up using</p>
             <div className="flex justify-center items-center gap-4 ">
-              <FaGoogle  onClick={handleGoogleSignin} className="text-2xl hover:text-violet-700" />
-              <FaGithub onClick={handleGithubLogin} className="text-2xl hover:text-violet-700"></FaGithub>
+              <FaGoogle  onClick={handleGoogleSignin} className="text-2xl text-violet-500 hover:text-violet-700" />
+              <FaGithub onClick={handleGithubLogin} className="text-2xl text-violet-500 hover:text-violet-700"></FaGithub>
             </div>
 
           </form>

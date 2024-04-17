@@ -90,10 +90,10 @@
 // <span className="relative -top-8 left-[290px]" onClick={() => setShowPass(!showPass)}>
 
 
-    // {
-    //     showPass ? <FaEye></FaEye>
-    //         : <FaEyeSlash></FaEyeSlash>
-    // }
+// {
+//     showPass ? <FaEye></FaEye>
+//         : <FaEyeSlash></FaEyeSlash>
+// }
 // </span>
 
 // {/* Indicate the error messages for password validation */}
@@ -211,14 +211,14 @@ const Register = () => {
                                     lowercase: value => passwordLowercasePattern.test(value) || "Password must contain at least one lowercase letter",
                                     uppercase: value => passwordUppercasePattern.test(value) || "Password must contain at least one uppercase letter"
                                 }
-                            })}  type={showPass ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            })} type={showPass ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                             {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg> */}
-                            
+
                             <span className=" left-[290px]" onClick={() => setShowPass(!showPass)}>
-                            {
-        showPass ? <FaEye></FaEye>
-            : <FaEyeSlash></FaEyeSlash>
-    }
+                                {
+                                    showPass ? <FaEye></FaEye>
+                                        : <FaEyeSlash></FaEyeSlash>
+                                }
                             </span>
                         </label>
 
